@@ -11,16 +11,16 @@ function capturarTexto() {
         <div class="container__task" id="${idCounter}">
             <input type="checkbox">
             <p class="task__text">${captureText.value}</p>
-            <img src="/img/trash3-fill.svg" alt="">
+            <i class="fa-solid fa-trash"></i>
         </div>`;
     captureText.value = "";
     actualizarEstados();
 };
 
-list.addEventListener('click', (event) => { 
+list.addEventListener('click', (event) => {
     if (event.srcElement.nodeName == "INPUT") {
         actualizarEstados();
-    } else if (event.srcElement.nodeName == "IMG") {
+    } else if (event.srcElement.nodeName == "I") {
         console.log(event.srcElement.parentNode.id)
         deleteTask(event.srcElement.parentNode.id);
     }
